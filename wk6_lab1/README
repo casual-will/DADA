@@ -1,0 +1,62 @@
+Week 6 First Lab Write-up
+By: Will Kuhn
+
+1. See code
+2.top 5 service ports
+R's:
+Netbios session service, http, POP3, ssh, and DNS.
+Datacenter
+O's
+SMTP, http, ssh, DNS, Microsoft CIFS
+work
+3. See code
+4. It looks like R is corporate with addresses like 10.5.*.*. This agrees with the notion that the R is datacenter related. The other looks like many different addresses which could be an ISP or a datacenter.
+5. In R the dominate network prefix is 10.5.63.* and in O it is 192.245.12.*
+6. See code
+7. It seems as though the addresses 207.182.35.* addresses seemed to be associated with the O data and OSPF traffic.
+8. Yes. Since OSPF is router related information being distributed then there is a good chance that it is related to a corporate network with many routers.
+9. See code
+10. 
+R:
+ipdst 10.5.63.30 has 2 distinct ipsrc on ports:
+ipdst 10.5.63.16 has 2 distinct ipsrc on ports:
+ipdst 10.5.63.23 has 3 distinct ipsrc on ports: udp/137, udp/138,
+ipdst 10.5.63.24 has 3 distinct ipsrc on ports: tcp/23, udp/137,
+ipdst 10.5.63.200 has 3 distinct ipsrc on ports: tcp/139, tcp/80,
+ipdst 10.5.63.202 has 3 distinct ipsrc on ports:
+ipdst 10.5.63.204 has 3 distinct ipsrc on ports: udp/137, udp/138,
+ipdst 10.5.63.21 has 4 distinct ipsrc on ports:
+ipdst 10.5.63.12 has 4 distinct ipsrc on ports: tcp/139,
+ipdst 10.5.63.17 has 4 distinct ipsrc on ports: tcp/139, udp/137,
+ipdst 10.5.63.231 has 5 distinct ipsrc on ports: tcp/139, udp/137,
+ipdst 10.5.63.18 has 6 distinct ipsrc on ports: tcp/891,
+ipdst 10.5.63.11 has 6 distinct ipsrc on ports: tcp/139, udp/137,
+ipdst 10.5.63.14 has 6 distinct ipsrc on ports: tcp/113, udp/137, udp/138,
+ipdst 10.5.63.22 has 7 distinct ipsrc on ports: tcp/139, tcp/23,
+ipdst 10.5.63.230 has 10 distinct ipsrc on ports: tcp/139, udp/137, udp/138,
+ipdst 10.5.63.27 has 19 distinct ipsrc on ports: tcp/139, tcp/113, udp/137,
+ipdst 10.5.63.6 has 23 distinct ipsrc on ports: tcp/25, tcp/22, udp/53, tcp/110,
+ipdst 10.5.63.7 has 26 distinct ipsrc on ports: tcp/139, tcp/721, tcp/80, udp/137, tcp/135, udp/138,
+ipdst 10.5.63.255 has 33 distinct ipsrc on ports: udp/137, udp/138,
+O:
+ipdst 204.153.45.185 has 69 distinct ipsrc on ports: tcp/80,
+ipdst 192.245.12.53 has 69 distinct ipsrc on ports: udp/53, tcp/135,
+ipdst 204.153.45.2 has 73 distinct ipsrc on ports: udp/53, tcp/25,
+ipdst 207.182.42.21 has 74 distinct ipsrc on ports: tcp/25,
+ipdst 192.245.12.9 has 83 distinct ipsrc on ports: tcp/465, tcp/1023, udp/53, tcp/135, tcp/993, tcp/143, tcp/110, tcp/995, tcp/25, tcp/445, tcp/22,
+ipdst 207.182.32.14 has 88 distinct ipsrc on ports: tcp/25,
+ipdst 207.182.40.40 has 94 distinct ipsrc on ports: tcp/25, tcp/445,
+ipdst 211.194.245.63 has 149 distinct ipsrc on ports: tcp/113,
+ipdst 207.182.38.2 has 191 distinct ipsrc on ports: tcp/25, udp/53, tcp/445, tcp/53,
+ipdst 192.245.12.52 has 201 distinct ipsrc on ports: udp/53, tcp/135, tcp/53,
+ipdst 192.245.12.8 has 248 distinct ipsrc on ports: udp/123, tcp/25, tcp/135, tcp/993, tcp/143, tcp/110, tcp/995, tcp/23, udp/53, tcp/22,
+ipdst 192.245.12.50 has 343 distinct ipsrc on ports: udp/13, udp/53, udp/37,
+ipdst 192.245.12.221 has 384 distinct ipsrc on ports: tcp/139, tcp/113, tcp/80, tcp/25, tcp/135, udp/123,
+ipdst 192.245.12.237 has 395 distinct ipsrc on ports: tcp/113, tcp/135, tcp/25, tcp/21,
+ipdst 192.245.12.7 has 630 distinct ipsrc on ports: tcp/80, tcp/23, tcp/25, tcp/135, udp/123, udp/53,
+ipdst 192.245.12.56 has 753 distinct ipsrc on ports: udp/53, tcp/135, tcp/22,
+ipdst 192.245.12.230 has 818 distinct ipsrc on ports: tcp/25, tcp/135, tcp/22,
+ipdst 192.245.12.242 has 1049 distinct ipsrc on ports: tcp/25, tcp/135, udp/137, tcp/22,
+ipdst 192.245.12.233 has 1083 distinct ipsrc on ports: tcp/25, tcp/135, tcp/445, tcp/22,
+ipdst 192.245.12.234 has 1241 distinct ipsrc on ports: tcp/25, tcp/135, tcp/22,
+11. 
