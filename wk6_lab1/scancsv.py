@@ -13,7 +13,8 @@ parser.add_argument("-countip", action="store_true")
 args = parser.parse_args()
 
 IPProtos = [0 for x in range(256)]
-Ports = [0 for x in range(1024)]
+Ports_tcp = [0 for x in range(1024)]
+Ports_udp = [0 for x in range(1024)]
 IP = {}
 numBytes = 0
 numPackets = 0
@@ -24,9 +25,9 @@ for pkt in CSVPackets(csvfile):
     # pkt.__str__ is defined...
     #print pkt
     if pkt.tcpdport and pkt.tcpdport < 1024:
-        Ports[pkt.tcpdport] += 1
+        Ports_tcp[pkt.tcpdport] += 1
     if pkt.udpdport and pkt.udpdport < 1024:
-        Ports[pkt.udpdport] += 1
+        Ports_udp[pkt.udpdport] += 1
     if pkt.ipdst:
         if IP.has_key(pkt.ipdst):
             IP[pkt.ipdst] += 1
@@ -47,9 +48,14 @@ for pkt in CSVPackets(csvfile):
 #    if IPProtos[i] != 0:
 #        print "%3u: %9u" % (i, IPProtos[i])
 if args.stats:
+    print "TCP"
     for i in range(1024):
-        if Ports[i] != 0:
-            print "%3u: %9u" % (i, Ports[i])
+        if Ports_tcp[i] != 0:
+            print "%3u: %9u" % (i, Ports_tcp[i])
+    print "UDP"
+    for i in range(1024):
+        if Ports_udp[i] != 0:
+            print "%3u: %9u" % (i, Ports_udp[i])
 
 if args.countip:
     print_sort_dict(IP)
